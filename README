@@ -8,4 +8,10 @@ Currently included in this library:
 
 - boppreh.utils.display
 
- * 
+ * bringToFront
+ * sendToBack
+ * getChildren
+ * setParent
+ * snapshot
+ * tint
+ * resetTint
