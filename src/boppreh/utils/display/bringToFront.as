@@ -31,7 +31,7 @@ package boppreh.utils.display
 
 	/**
 	 * Sets the object index the highest possible value.
-	 * @param object the object to have its index changed
+	 * @param object The object to have its index changed.
 	 */
 	public function bringToFront(object:DisplayObject):void
 	{
