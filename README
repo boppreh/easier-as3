@@ -1,10 +1,10 @@
-This is a library of small, self contained functions and classes that simplify everyday chores.
+  This is a library of small, self contained functions and classes that simplify everyday chores.
 
-All code is released under the MIT license and can be used free of charge for personal and commercial purposes.
+  All code is released under the MIT license and can be used free of charge for personal and commercial purposes.
 http://www.opensource.org/licenses/mit-license.php
 
 
-Currently included in this library:
+  Currently included in this library:
 
 - boppreh.utils.display
 
@@ -15,3 +15,8 @@ Currently included in this library:
  * snapshot
  * tint
  * resetTint
+
+ 
+  All functions work on any DisplayObject (or DisplayObjectContainer, depending on the function), like Sprites, MovieClips, Bitmaps, TextFields and custom library symbols.
+
+  And they do exactly what it says on the tin.
