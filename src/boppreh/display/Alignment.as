@@ -3,8 +3,6 @@ package boppreh.display
 	
 	public class Alignment
 	{
-		public static const DEFAULT:uint = -1
-		
 		public static const CENTER:uint = 0
 		
 		public static const TOP_CENTER:uint = 1
