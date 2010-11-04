@@ -15,6 +15,9 @@ http://www.opensource.org/licenses/mit-license.php
  * snapshot
  * tint
  * resetTint
+ * Alignment
+ * getPosition
+ * setPosition
 
  
   All functions work on any DisplayObject (or DisplayObjectContainer, depending on the function), like Sprites, MovieClips, Bitmaps, TextFields and custom library symbols.
