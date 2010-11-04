@@ -1,4 +1,4 @@
-package boppreh.utils.display
+package boppreh.display
 {
 	
 	public class Alignment

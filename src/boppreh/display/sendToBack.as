@@ -25,19 +25,18 @@
 
 */
 
-package boppreh.utils.display
+package boppreh.display
 {
 	
 	import flash.display.DisplayObject
-	import flash.geom.ColorTransform
 
 	/**
-	 * Removes the tint previously applied to an object.
-	 * @param object The object to have its tint removed.
+	 * Sets the object index the lowest possible value.
+	 * @param object The object to have its index changed.
 	 */
-	public function resetTint(object:DisplayObject):void
+	public function sendToBack(object:DisplayObject):void
 	{
-		object.transform.colorTransform = new ColorTransform()
+		object.parent.setChildIndex(object, 0)
 	}
 	
 }

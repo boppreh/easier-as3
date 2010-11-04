@@ -25,29 +25,23 @@
 
 */
 
-package boppreh.utils.display
+package boppreh.display
 {
 	
 	import flash.display.DisplayObject
-	import flash.display.Sprite
-	import flash.display.BitmapData
-	import flash.display.Bitmap
-	import flash.geom.Rectangle
-	import flash.geom.Matrix
-	
+	import fl.motion.Color
+
 	/**
-	 * Takes a snapshot of an object, returning a bitmap image of its current appearance.
-	 * @param object The object to be copied.
-	 * @param transparentBitmapData Defines if the unused part of the bitmap will be transparent or not.
-	 * @param smoothing A Boolean value that determines whether the returned bitmap object is smoothed when scaled or rotated.
-	 * @return A sprite containing a bitmap snapshot of the original object.
+	 * Tints an object with a certain color an amount.
+	 * @param object The object to have its color changed.
+	 * @param color The tint color.
+	 * @param alpha The amount to be tintet, being 0 no change and 1 completely painted.
 	 */
-	public function snapshot(object:DisplayObject, transparentBitmapData:Boolean=true, smoothing:Boolean=true):Sprite {
-		var bounds:Rectangle = object.getBounds(object)
-		var data:BitmapData = new BitmapData(bounds.width, bounds.height, transparentBitmapData, 0xFFFFFF)
-		data.draw(object, new Matrix(1,0,0,1,-bounds.x,-bounds.y), null, null, null, smoothing );
-		var sprite = new Sprite()
-		sprite.addChild(new Bitmap(data, "auto", true))
-		return sprite
+	public function tint(object:DisplayObject, color:uint, alpha:Number = 1):void
+	{
+		var tintColor:Color = new Color()
+		tintColor.setTint(color, alpha)
+		object.transform.colorTransform = tintColor
 	}
+	
 }

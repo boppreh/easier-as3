@@ -25,7 +25,7 @@
 
 */
 
-package boppreh.utils.display
+package boppreh.display
 {
 	
 	import flash.display.DisplayObject

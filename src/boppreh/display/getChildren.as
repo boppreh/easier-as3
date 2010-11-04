@@ -1,4 +1,4 @@
-﻿/*
+/*
 
   Licensed under the MIT License
 
@@ -25,23 +25,24 @@
 
 */
 
-package boppreh.utils.display
+package boppreh.display
 {
 	
-	import flash.display.DisplayObject
-	import fl.motion.Color
-
+	import flash.display.DisplayObjectContainer
+	
 	/**
-	 * Tints an object with a certain color an amount.
-	 * @param object The object to have its color changed.
-	 * @param color The tint color.
-	 * @param alpha The amount to be tintet, being 0 no change and 1 completely painted.
+	 * Returns a list of the children of an object.
+	 * @param	container The object to have its children listed.
+	 * @return	The list of the object's children.
 	 */
-	public function tint(object:DisplayObject, color:uint, alpha:Number = 1):void
+	public function getChildren(container:DisplayObjectContainer):Array
 	{
-		var tintColor:Color = new Color()
-		tintColor.setTint(color, alpha)
-		object.transform.colorTransform = tintColor
+		var list:Array = []
+		for (var i:int = 0; i < container.numChildren; i++)
+		{
+			list.push(container.getChildAt(i))
+		}
+		return list
 	}
 	
 }
