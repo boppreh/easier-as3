@@ -1,4 +1,4 @@
-  This is a library of small, self contained functions and classes that simplify everyday chores.
+  This is a library of small, small functions and classes that simplify everyday chores.
 
   All code is released under the MIT license and can be used free of charge for personal and commercial purposes.
 http://www.opensource.org/licenses/mit-license.php
@@ -6,7 +6,7 @@ http://www.opensource.org/licenses/mit-license.php
 
   Currently included in this library:
 
-- boppreh.utils.display
+- boppreh.display
 
  * bringToFront
  * sendToBack
