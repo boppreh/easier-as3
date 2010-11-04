@@ -3,17 +3,19 @@ package boppreh.display
 	
 	public class Alignment
 	{
-		public static const CENTER:uint = 0
+										// yyxx
 		
-		public static const TOP_CENTER:uint = 1
-		public static const BOTTOM_CENTER:uint = 2
-		public static const CENTER_RIGHT:uint = 3
-		public static const CENTER_LEFT:uint = 4
+		public static const CENTER:uint = 0		// 0000
 		
-		public static const TOP_LEFT:uint = 5
-		public static const TOP_RIGHT:uint = 6
-		public static const BOTTOM_LEFT:uint = 7
-		public static const BOTTOM_RIGHT:uint = 8
+		public static const TOP_CENTER:uint = 8		// 1000
+		public static const BOTTOM_CENTER:uint = 4	// 0100
+		public static const CENTER_LEFT:uint = 2	// 0010
+		public static const CENTER_RIGHT:uint = 1	// 0001
+		
+		public static const TOP_LEFT:uint = 10		// 1010
+		public static const TOP_RIGHT:uint = 9		// 1001
+		public static const BOTTOM_LEFT:uint = 6	// 0110
+		public static const BOTTOM_RIGHT:uint = 5	// 0101
 	}
 	
 }
