@@ -40,6 +40,11 @@ package boppreh
 		private static var _stage:Stage;
 		public static function get stage():Stage { return _stage; }
 		
+		public static function set stage(value:Stage):void
+		{
+			_stage = value;
+		}
+		
 		public function TopLevel() {
 			_stage = this.stage
 		}
