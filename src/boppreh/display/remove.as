@@ -1,4 +1,4 @@
-﻿/*
+/*
 
   Licensed under the MIT License
 
@@ -28,15 +28,12 @@
 package boppreh.display
 {
 	
-	import flash.display.DisplayObject
-
-	/**
-	 * Sets the object index the lowest possible value.
-	 * @param object The object to have its index changed.
-	 */
-	public function sendToBack(object:DisplayObject):void
-	{
-		object.parent.setChildIndex(object, 0)
-	}
 	
+	/**
+	 * Removes an object from its current container.
+	 * @param	object The object to be removed.
+	 */
+	public function remove(object:DisplayObject):void {
+		object.parent.removeChild(object)
+	}
 }

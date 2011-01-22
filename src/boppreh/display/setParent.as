@@ -2,7 +2,7 @@
 
   Licensed under the MIT License
 
-  Copyright (c) 2010 Lucas Boppre Niehues
+  Copyright (c) 2011 Lucas Boppre Niehues
   lucasboppre@gmail.com
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,6 +40,7 @@ package boppreh.display
 	public function setParent(child:DisplayObject, parent:DisplayObjectContainer):void {
 		var parentMatrix:Matrix = parent.transform.concatenatedMatrix
 		parentMatrix.invert()
+		
 		var childMatrix:Matrix = child.transform.concatenatedMatrix
 		childMatrix.concat(parentMatrix)
 		child.transform.matrix = childMatrix

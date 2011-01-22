@@ -2,7 +2,7 @@
 
   Licensed under the MIT License
 
-  Copyright (c) 2010 Lucas Boppre Niehues
+  Copyright (c) 2011Lucas Boppre Niehues
   lucasboppre@gmail.com
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
