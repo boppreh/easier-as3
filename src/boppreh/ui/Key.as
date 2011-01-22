@@ -51,11 +51,11 @@ package boppreh.ui
 		private static var dispatcher:EventDispatcher = new EventDispatcher()
 		
 		{
-			TopLevel.instance.stage.addEventListener(KeyboardEvent.KEY_DOWN, pressedKey)
-			TopLevel.instance.stage.addEventListener(KeyboardEvent.KEY_UP, releasedKey)
+			TopLevel.stage.addEventListener(KeyboardEvent.KEY_DOWN, pressedKey)
+			TopLevel.stage.addEventListener(KeyboardEvent.KEY_UP, releasedKey)
 		}
 		
-		public static function getModifiers(event:KeyboardEvent):int {
+		public static function getModifiers(event:Event):int {
 			return (event.altKey && MODIFIER_ALT) +
 				 (event.shiftKey && MODIFIER_SHIFT) +
 				 (event.ctrlKey && MODIFIER_CTRL)
