@@ -32,6 +32,8 @@ package boppreh
 
 	/**
 	 * Provides static methods for time related utilities.
+	 *
+	 * Requires a boppreh.TopLevel instance set.
 	 */
 	public class Time {
 		
