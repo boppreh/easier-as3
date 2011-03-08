@@ -49,7 +49,7 @@ package boppreh
 			while (functions.length && functions[0].time <= getTimer()) {
 				
 				var item:Object = functions.shift()
-				item.function_(item.args)
+				item.function_.apply(null, item.args)
 			}
 		}
 		
