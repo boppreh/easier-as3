@@ -55,10 +55,16 @@ package boppreh.ui
 			TopLevel.stage.addEventListener(KeyboardEvent.KEY_UP, releasedKey)
 		}
 		
-		public static function getModifiers(event:Event):int {
+		public static function getModifiers(event:*):int {
 			return (event.altKey && MODIFIER_ALT) +
 				 (event.shiftKey && MODIFIER_SHIFT) +
 				 (event.ctrlKey && MODIFIER_CTRL)
+		}
+		
+		public static function setModifiers(event:*, modifiers:int):void {
+			event.shiftKey = Boolean(modifiers & MODIFIER_SHIFT)
+			event.altKey = Boolean(modifiers & MODIFIER_ALT)
+			event.ctrlKey = Boolean(modifiers & MODIFIER_CTRL)
 		}
 		
 		private static function pressedKey(event:KeyboardEvent):void {
@@ -82,10 +88,12 @@ package boppreh.ui
 		
 		/**
 		 * Encodes the key and modifiers into an event type.
+		 * @param key The keyCode number of the pressed key.
+		 * @param modifiers One or more modifiers (accessible from Key.MODIFIER_X) summed with bitwise OR.
 		 * @return A string representing the event type of the key and modifiers combination being pressed.
 		 */
-		public static function getEventType(key:int, modifiers:int):String {
-			return String(key) + "-" + String(modifiers)
+		public static function getEventType(keyCode:int, modifiers:int = -1):String {
+			return String(keyCode) + "-" + String(modifiers)
 		}
 		
 		public static function addEventListener (type:String, listener:Function) : void {
