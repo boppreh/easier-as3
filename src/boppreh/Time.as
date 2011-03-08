@@ -87,22 +87,34 @@ package boppreh
 		}
 		
 		/**
-		 * Measures how much time a function takes to run, on average.
-		 * @param	function_ The function to be timed.
-		 * @param	args Array of arguments to be passed to the function, if any.
-		 * @param	executions Number of executions to average the results.
-		 * @return The number of milliseconds the function takes to run, in average.
+		 * Measures how long a function takes to run, averaged over many tests.
+		 * @param	function_	The function to me analyzed.
+		 * @param	args	Optional, arguments to be passed to the function during the test.
+		 * @param	benchmarkDuration	How long the test will last, in milliseconds. Remember Flash has a default script time limit of 15 seconds.
+		 * @return	The average number of milliseconds the function took to run.
 		 */
-		public static function timeFunction(function_:Function, args:Array = null, executions:uint = 1):Number {
-			var totalTime:int = 0
+		public static function benchmark(function_:Function, args:Array = null, benchmarkDuration:Number = 2000):Number {
+			args = args || []
 			
-			for (var i:int = 0; i < executions; i++) {
-				var oldTime:int = getTimer()
-				function_(args)
-				totalTime += getTimer() - oldTime
-			}
+			var startingTime:int = getTimer()
 			
-			return totalTime / Number(executions)
+			var totalExecutionTime:int = 0
+			var executionsCount:int = 0
+			
+			var timeBefore:int
+			var timeAfter:int
+			
+			do {
+				timeBefore = getTimer()
+				function_.apply(null, args)
+				timeAfter = getTimer()
+				
+				totalExecutionTime += timeAfter - timeBefore
+				executionsCount++
+				
+			} while (timeAfter - startingTime < benchmarkDuration)
+			
+			return totalExecutionTime / executionsCount
 		}
 	}
 }
