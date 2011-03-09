@@ -27,6 +27,7 @@
 
 package boppreh
 {
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.utils.getTimer
 
@@ -40,9 +41,10 @@ package boppreh
 		private static var functions:Array = []
 		private static var lastID:uint = 0
 		
+		private static const frameEventDispatcher:Sprite = new Sprite()
+		
 		{
-			TopLevel.stage.addEventListener(Event.ENTER_FRAME, update)
-			
+			frameEventDispatcher.addEventListener(Event.ENTER_FRAME, update)
 		}
 		
 		private static function update(event:Event):void {
@@ -54,13 +56,13 @@ package boppreh
 		}
 		
 		/**
-		 * Calls a functions after a certain amount of time, in milliseconds, whitin a frame of precision.
+		 * Calls a functions after a certain amount of time, in milliseconds, within a frame of precision.
 		 * @param	delay The number of milliseconds to wait before calling the function.
 		 * @param	function_ The function to be called.
 		 * @param	args	A list of the arguments to be passed to the called function.
 		 * @return An id to be used if you wish to cancel the booked function using "cancelDelayedFunction".
 		 */
-		public static function delayFunction(delay:int, function_:Function, args:Array = null):uint {
+		public static function delayFunction(delay:int, function_:Function, args:Array=null):uint {
 			var item:Object = { }
 			item.id = lastID++
 			item.time = getTimer() + delay
@@ -93,7 +95,7 @@ package boppreh
 		 * @param	benchmarkDuration	How long the test will last, in milliseconds. Remember Flash has a default script time limit of 15 seconds.
 		 * @return	The average number of milliseconds the function took to run.
 		 */
-		public static function benchmark(function_:Function, args:Array = null, benchmarkDuration:Number = 2000):Number {
+		public static function benchmark(function_:Function, args:Array=null, benchmarkDuration:Number=2000):Number {
 			args = args || []
 			
 			var startingTime:int = getTimer()
