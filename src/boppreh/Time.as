@@ -33,8 +33,6 @@ package boppreh
 
 	/**
 	 * Provides static methods for time related utilities.
-	 *
-	 * Requires a boppreh.TopLevel instance set.
 	 */
 	public class Time {
 		
@@ -47,6 +45,12 @@ package boppreh
 			frameEventDispatcher.addEventListener(Event.ENTER_FRAME, update)
 		}
 		
+		// The "functions.shift" operation can be costly with there are
+		// too many scheduled functions. If the extra delay before the call
+		// becomes unbearable, one could reverse the order the functions are
+		// added to the list and use "functions.pop" instead.
+		// A better solution in terms of speed would be a linked list,
+		// but the development cost is currently unworthy.
 		private static function update(event:Event):void {
 			while (functions.length && functions[0].time <= getTimer()) {
 				
