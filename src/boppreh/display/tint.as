@@ -32,10 +32,10 @@ package boppreh.display
 	import fl.motion.Color
 
 	/**
-	 * Tints an object with a certain color an amount.
+	 * Tints an object with a certain color and amount.
 	 * @param object The object to have its color changed.
 	 * @param color The tint color.
-	 * @param alpha The amount to be tintet, being 0 no change and 1 completely painted.
+	 * @param alpha The amount to be tinted, being 0 no change and 1 completely painted.
 	 */
 	public function tint(object:DisplayObject, color:uint, alpha:Number = 1):void
 	{
